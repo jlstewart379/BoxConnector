@@ -34,6 +34,8 @@ import org.xml.sax.InputSource;
 import box.constants.BoxConstant;
 import box.utils.Logger;
 
+
+
 /**
  * @author Jimmy
  * 
@@ -212,12 +214,16 @@ public final class BoxHTTPManager {
 	 */
 	public String doPostXML(String url, String postData) throws IOException {
 		long t1 = System.currentTimeMillis();
-		if (LOGGER.isDebugEnabled()) {
-			LOGGER.debug("##### doPost-start #####, url=" + url
-					+ ", postData=\n" + postData);
-		}
+		System.out.println("doPostXML was called"); 
+		System.out.println("Another doPost to write. Postdata is " + postData); 
+//		if (LOGGER.isDebugEnabled()) {
+//			System.out.println("About to create post method object."); 
+//			LOGGER.debug("##### doPost-start #####, url=" + url
+//					+ ", postData=\n" + postData);
+//		}
 		String response = null;
 		PostMethod pMethod = new PostMethod(url);
+
 		if ("yes".equalsIgnoreCase(config
 				.getProperty(BoxConstant.CONFIG_HTTPCLIENT_IGNORECOOKIES))) {
 			pMethod.getParams().setCookiePolicy(CookiePolicy.IGNORE_COOKIES);
@@ -230,6 +236,7 @@ public final class BoxHTTPManager {
 			pMethod.setRequestEntity(xmlRequestEntity);
 			this.hc.executeMethod(pMethod);
 			response = pMethod.getResponseBodyAsString();
+			System.out.println("The response is: " + response); 
 		} finally {
 			pMethod.releaseConnection();
 		}

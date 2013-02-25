@@ -589,6 +589,7 @@ public class BoxRequestFactory extends BaseBoxFactory {
      */
     public static RegisterNewUserRequest createRegisterNewUserRequest() {
         Object obj = newInstanceOf("box4j.config.requestfactory.RegisterNewUserRequest");
+        System.out.println("Mapping factory to class. The object is null " + obj == null); 
         return (RegisterNewUserRequest) obj;
     }
 
@@ -605,10 +606,12 @@ public class BoxRequestFactory extends BaseBoxFactory {
      */
     public static RegisterNewUserRequest createRegisterNewUserRequest(
             String apiKey, String loginName, String password) {
-        RegisterNewUserRequest registerNewUserRequest = createRegisterNewUserRequest();
+        System.out.println("createRegisterNewUserRequest"); 
+    	RegisterNewUserRequest registerNewUserRequest = createRegisterNewUserRequest();
         registerNewUserRequest.setApiKey(apiKey);
         registerNewUserRequest.setLoginName(loginName);
         registerNewUserRequest.setPassword(password);
+        System.out.println("RegisterNewUserRequest parameters set"); 
         return registerNewUserRequest;
     }
 

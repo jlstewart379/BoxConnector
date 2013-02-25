@@ -37,7 +37,7 @@ public class Logger {
 	}
 
 	public boolean isDebugEnabled() {
-		// TODO Auto-generated method stub
+		System.out.println("isDebugEnabledCalled"); 
 		return false;
 	}
 

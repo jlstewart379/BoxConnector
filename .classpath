@@ -7,7 +7,7 @@
 	<classpathentry kind="lib" path="boxSrc/objects"/>
 	<classpathentry kind="lib" path="/Users/jstewart/Downloads/dom4j-1.6.1.jar"/>
 	<classpathentry kind="lib" path="/Users/jstewart/Downloads/commons-codec-1.4.jar"/>
-	<classpathentry kind="lib" path="/Users/jstewart/Downloads/apache-log4j-2.0-beta4-bin/log4j-to-slf4j-2.0-beta4.jar"/>
 	<classpathentry kind="lib" path="/Users/jstewart/Downloads/commons-httpclient-3.0.1.jar"/>
+	<classpathentry kind="lib" path="/Users/jstewart/Downloads/commons-logging-1.1.1/commons-logging-1.1.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
