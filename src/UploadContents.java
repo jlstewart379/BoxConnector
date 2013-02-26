@@ -11,7 +11,7 @@ public class UploadContents {
 		// the global API interface
 		BoxExternalAPI iBoxExternalAPI = new SimpleBoxImpl();
 		
-		String API_KEY = "yv017qbu0wowat2spngv0joo70fd8loi&state=authenticated";
+		String API_KEY = "yv017qbu0wowat2spngv0joo70fd8loi";
 
 		try {
 			// create a user for the preparation.
@@ -23,7 +23,6 @@ public class UploadContents {
 			iBoxExternalAPI.registerNewUser(registerNewUserRequest);
 			System.out.println("Your username is " + email);
 			System.out.println("Your password is " + password);
-			System.out.println("TEST"); 
 //
 //			// get a ticket by API key.
 //			GetTicketRequest getTicketRequest = BoxRequestFactory

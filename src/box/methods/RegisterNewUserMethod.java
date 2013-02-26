@@ -153,14 +153,16 @@ public class RegisterNewUserMethod extends BaseBoxMethod {
 			inLoginElm.setText(loginName);
 			passwordElm.setText(password);
 			String result = httpManager.doPostXML(xmlApiUrl, document.asXML());
+			System.out.println("The result has returned :" + result);
 			try {
 				Document doc = DocumentHelper.parseText(result);
 				Element responseElm = doc.getRootElement();
 				Element statusElm = responseElm
 						.element(BoxConstant.PARAM_NAME_STATUS);
 				String status = statusElm.getText();
+				System.out.println("Thes Status of the element is :" + status);
 				registerNewUserResponse.setStatus(status);
-				System.out.println("The status is: " + status); 
+				System.out.println("The status is: " + status);
 				if (BoxConstant.STATUS_SUCCESSFUL_REGISTER.equals(status)) {
 					Element authTokenElm = responseElm
 							.element(BoxConstant.PARAM_NAME_AUTH_TOKEN);

@@ -240,11 +240,12 @@ public final class BoxHTTPManager {
 		} finally {
 			pMethod.releaseConnection();
 		}
-		if (LOGGER.isDebugEnabled()) {
-			LOGGER.debug("##### doPost-end   #####, used time: "
-					+ (System.currentTimeMillis() - t1) + " ms,response=\n"
-					+ response + "\n");
-		}
+//		if (LOGGER.isDebugEnabled()) {
+//			LOGGER.debug("##### doPost-end   #####, used time: "
+//					+ (System.currentTimeMillis() - t1) + " ms,response=\n"
+//					+ response + "\n");
+//		}
+		System.out.println("Getting ready to return response: " + response);
 		return response;
 	}
 
