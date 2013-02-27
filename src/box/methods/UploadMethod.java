@@ -73,6 +73,7 @@ public class UploadMethod extends BaseBoxMethod {
                 File inFIle = (File) entry.getValue();
                 fileList.add(inFIle);
             }
+            
             result = httpManager.doMultipartPost(urlBuff.toString(), fileList);
         } else {
             result = httpManager.doMultipartPost(urlBuff.toString(),
@@ -87,13 +88,17 @@ public class UploadMethod extends BaseBoxMethod {
             be.setStatus(uploadResponse.getStatus());
             throw be;
         }
+       
         Element responseElm = doc.getRootElement();
         Element statusElm = responseElm.element(BoxConstant.PARAM_NAME_STATUS);
         String status = statusElm.getText();
         uploadResponse.setStatus(status);
         Element filesElm = responseElm.element(BoxConstant.PARAM_NAME_FILES);
+        System.out.println("UploadResponse upload 8"); 
         List fileStatusList = toFileStatusList(filesElm);
+        System.out.println("Setting Upload Result"); 
         uploadResponse.setUploadResultList(fileStatusList);
+        System.out.println("UploadResponse upload 10"); 
         return uploadResponse;
     }
 
@@ -109,6 +114,7 @@ public class UploadMethod extends BaseBoxMethod {
             UploadResult uploadFileStatus = BoxObjectFactory
                     .createUploadResult();
             BoxFile soapFileInfo = BoxObjectFactory.createBoxFile();
+            System.out.println("BoxFileCreated"); 
             uploadFileStatus.setFile(soapFileInfo);
             Element fileElm = (Element) filesElm.node(i);
             String fileName = fileElm.attributeValue("file_name");

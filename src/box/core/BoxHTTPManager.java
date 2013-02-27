@@ -214,7 +214,6 @@ public final class BoxHTTPManager {
 	 */
 	public String doPostXML(String url, String postData) throws IOException {
 		long t1 = System.currentTimeMillis();
-		System.out.println("doPostXML was called"); 
 		System.out.println("Another doPost to write. Postdata is " + postData); 
 //		if (LOGGER.isDebugEnabled()) {
 //			System.out.println("About to create post method object."); 
@@ -433,9 +432,6 @@ public final class BoxHTTPManager {
 	 */
 	public String doMultipartPost(String url, List fileList) throws IOException {
 		long t1 = System.currentTimeMillis();
-		if (LOGGER.isDebugEnabled()) {
-			LOGGER.debug("doPost, start, url=" + url);
-		}
 		PostMethod pMethod = new PostMethod(url);
 		int fileCounts = fileList.size();
 		Part[] parts = new Part[fileCounts];
@@ -450,11 +446,7 @@ public final class BoxHTTPManager {
 		this.hc.executeMethod(pMethod);
 		byte[] responseBody = pMethod.getResponseBody();
 		String response = new String(responseBody);
-		if (LOGGER.isDebugEnabled()) {
-			LOGGER.debug("doPost, end, used time: "
-					+ (System.currentTimeMillis() - t1));
-			LOGGER.debug("doPost, end, response=\n" + response);
-		}
+		
 		return response;
 
 	}

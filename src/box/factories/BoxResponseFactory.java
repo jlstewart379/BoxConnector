@@ -244,8 +244,8 @@ public class BoxResponseFactory extends BaseBoxFactory {
      * @return response object
      */
     public static UploadResponse createUploadResponse() {
-        Object obj = newInstanceOf("box4j.config.responsefactory.UploadResponse");
-        return (UploadResponse) obj;
+    	Object obj = newInstanceOf("box4j.config.responsefactory.UploadResponse");
+    	return (UploadResponse) obj;
     }
 
     /**
